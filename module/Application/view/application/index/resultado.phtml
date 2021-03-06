@@ -1,0 +1,66 @@
+<h1>Resultado de la operación</h1>
+<?php
+// $flash = $this->flashMessenger()
+//     ->setMessageOpenFormat('<div%s>')
+//     ->setMessageSeparatorString('')
+//     ->setMessageCloseString('</div>');
+?>
+
+<tr style="background-color:<?php echo $this->cycle(array("#F0F0F0", "#FFFFFF"))->next() ?>">
+    <td>Congratulations your account has been recharged</td><br/>
+    <td>Recharge amount <?= $amount ?></td><br/>
+    <td>Tax: <?= $tax ?></td><br/>
+    <td>Total: <?= $tax+$amount ?></td><br/>
+</tr>
+
+<table class="table">
+
+    <tr>
+        <th>Number</th>
+        <th>Type</th>
+        <th>Number Card</th>
+        <th>Operation</th>
+    </tr>
+
+    <tr id="card1" style="background-color:<?php echo $this->cycle(array("#F0F0F0", "#FFFFFF"))->next() ?>">
+        <td>1</td>
+        <td><?= "American" ?></td>
+        <td><?= "xxxx xxx 1345" ?></td>
+        <td><a id="btn-del1" class="btn btn-danger">Eliminar</a></td>
+    </tr>
+    <tr id="card1" style="background-color:<?php echo $this->cycle(array("#F0F0F0", "#FFFFFF"))->next() ?>">
+        <td>2</td>
+        <td><?= "MASTER CARD" ?></td>
+        <td><?= "xxxx xxx 3345" ?></td>
+        <td><a id="btn-del1" class="btn btn-danger">Eliminar</a></td>
+    </tr>
+    <tr id="card1" style="background-color:<?php echo $this->cycle(array("#F0F0F0", "#FFFFFF"))->next() ?>">
+        <td>3</td>
+        <td><?= "SANTAFE" ?></td>
+        <td><?= "xxxx xxx 5345" ?></td>
+        <td><a id="btn-del1" class="btn btn-danger">Eliminar</a></td>
+    </tr>
+    <tr id="card1" style="background-color:<?php echo $this->cycle(array("#F0F0F0", "#FFFFFF"))->next() ?>">
+        <td>4</td>
+        <td><?= "MASTER CARD" ?></td>
+        <td><?= "xxxx xxx 7345" ?></td>
+        <td><a id="btn-del1" class="btn btn-danger">Eliminar</a></td>
+    </tr>
+    <tr id="card1" style="background-color:<?php echo $this->cycle(array("#F0F0F0", "#FFFFFF"))->next() ?>">
+        <td>5</td>
+        <td><?= "COLOMBIA" ?></td>
+        <td><?= "xxxx xxx 8345" ?></td>
+        <td><a id="btn-del1" class="btn btn-danger">Eliminar</a></td>
+    </tr>
+    <tr id="card1" style="background-color:<?php echo $this->cycle(array("#F0F0F0", "#FFFFFF"))->next() ?>">
+        <td>6</td>
+        <td><?= "COLPATRIA" ?></td>
+        <td><?= "xxxx xxx 9345" ?></td>
+        <td><a id="btn-del1" class="btn btn-danger">Eliminar</a></td>
+    </tr>
+    <script>
+        btn = document.querySelector('#btn-del1')
+            btn.onClick = function () { document.querySelector('#card1').style.display = "None"
+        }
+    </script>
+</table>

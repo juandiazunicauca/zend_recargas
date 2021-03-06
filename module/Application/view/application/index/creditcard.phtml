@@ -1,0 +1,34 @@
+<div>
+    <h1>DATOS TARJETA DE CREDITO</h1>
+     <?php
+    // $flash = $this->flashMessenger()
+    //     ->setMessageOpenFormat('<div%s>')
+    //     ->setMessageSeparatorString('')
+    //     ->setMessageCloseString('</div>');
+    // ?>
+    <form action="" method="post" enctype="multipart/form-data">
+        <p>Pease enter your credit card information </p>
+        <p><input type="text" id="fname" required="required" name="cardName" placeholder="Card Holder Name"></p>
+        <p><input type="text" id="fname" required="required" name="cardNumber" placeholder="Card Number"></p>
+        <p><input type="text" id="fname" required="required" name="expirationDate" placeholder="Expiration date"></p>
+        <p><input type="text" id="fname" required="required" name="cvv" placeholder="CVV"></p>
+        <p><input type="text" id="fname" required="required" name="address" placeholder="Address"></p>
+        <p><input type="text" id="fname" required="required" name="zip" placeholder="Zip"></p>
+        <p>Country
+            <select id="id_selectConutry"  required="required"  name="country">
+                <option value="">Seleccione su pais...</option>
+                <?php foreach ($listCountry as $country => $denomination) { ?>
+                    <option value="<?= $denomination ?>"><?= $country ?></option>
+                <?php } ?>
+
+            </select>
+        </p>
+        <p><input type="submit" value="Recharge"></p>
+    </form>
+   
+    <?php if (isset($confirmacion)) { ?>
+        <script>
+            document.location.href="/zendframework/application/resultado?amount=<?= $amount ?>&country=<?= $country ?>";
+        </script>
+    <?php } ?>
+</div>

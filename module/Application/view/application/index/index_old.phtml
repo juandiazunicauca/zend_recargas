@@ -1,0 +1,49 @@
+<div>
+    <h1>Resultado de la operación</h1>
+    <!-- <?php
+    // $flash = $this->flashMessenger()
+    //     ->setMessageOpenFormat('<div%s>')
+    //     ->setMessageSeparatorString('')
+    //     ->setMessageCloseString('</div>');
+    // ?> -->
+    <form action="" method="post" enctype="multipart/form-data">
+
+        <p>Please select the conuntry and the recharge amount#</p>
+        <p>Country
+
+            <select id="id_selectConutry" required="required" name="country">
+                <option value="">Seleccione su pais...</option>
+                <?php foreach ($listCountry as $country => $denomination) { ?>
+                    <option value="<?= $denomination ?>"><?= $country ?></option>
+                <?php } ?>
+
+            </select>
+        </p>
+        <p>Amount
+            <select id="id_selectAmount" required="required" name="amount">
+            <option value="">Seleccione el monto...</option>
+                <?php foreach ($listCantidades as $key => $cantidad) { ?>
+                    <option value="<?= $cantidad ?>"><?= $cantidad ?></option>
+                <?php } ?>
+            </select>
+        </p>
+        <p>Recharge amount: $<textarea id="id_amount" name="message" style="width:40px; height:30px;"></textarea></p>
+        <p>Local denomination: <textarea id="id_denomination" name="message" style="width:40px; height:30px;"></textarea></p>
+        <p><input type="submit" value="Next"></p>
+    </form>
+    <?php if (isset($confirmacion)) { ?>
+        <script>
+            document.location.href="/zendframework/application/creditcard?amount=<?= $amount ?>&country=<?= $country ?>";
+        </script>
+    <?php } ?>
+    <script>
+        denominacion = function(id_selectConutry, id_denomination) {
+            document.querySelector(id_selectConutry).onchange = function() {
+                let val = this.selectedOptions[0].value;
+                document.querySelector(id_denomination).value = val;
+            }
+        }
+        denominacion("#id_selectConutry", "#id_denomination")
+        denominacion("#id_selectAmount", "#id_amount")
+    </script>
+</div>
